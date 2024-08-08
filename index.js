@@ -25,6 +25,10 @@ app.use(session({
 
 const JWT_SECRET = 'process.env.JWT_SECRET';
 
+app.get("/", (req,res) => {
+  res.json({status: "ok"})
+});
+
 // Handle POST requests for /signup
 app.post('/signup', async (req, res) => {
   const { email, firstname, lastname, password, confirmpassword } = req.body;
